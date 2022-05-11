@@ -3,12 +3,17 @@ import fetch from 'node-fetch'
 export class Minecraft {
     private url = "https://api.mojang.com"
 
-    constructor() {}
-
     async getUUID(username: string) {
-        let res = await fetch(`${this.url}/users/profiles/minecraft/${username}`)
-        let data = await res.json()
+        const res = await fetch(`${this.url}/users/profiles/minecraft/${username}`)
+        const data = await res.json()
 
-        return data
+        return data.username
+    }
+
+    async getUsername(uuid: string) {
+        const res = await fetch(` https://sessionserver.mojang.com/session/minecraft/profile/${uuid}`)
+        const data = await res.json()
+
+        return data.name
     }
 }

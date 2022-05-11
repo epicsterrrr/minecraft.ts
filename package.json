@@ -1,9 +1,10 @@
 {
   "name": "minecraft.ts",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple to use Minecraft API wrapper written in TypeScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "commonjs",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
